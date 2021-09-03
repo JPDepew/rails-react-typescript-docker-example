@@ -1,1 +1,2 @@
-*        text=auto
+backend/bin/* eol=lf
+prehook eol=lf
