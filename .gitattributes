@@ -1,2 +1,1 @@
-backend/bin/* eol=lf
-prehook eol=lf
+*        text=auto
