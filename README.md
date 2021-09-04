@@ -24,22 +24,12 @@ $ docker-compose run backend bin/rails db:create db:migrate
 # Start
 $ docker-compose up -d
 
-# Open frontend
-$ open http://localhost:80 # You'll see yaichi page, then click any app
+# View frontend
+$ http://localhost:3000
 
-# Check backend API
-$ curl -H 'Host: backend.localhost' http://localhost/greetings/hello
+# View backend
+$ http://localhost:3001
 ```
-
-## Motivation
-
-Nowadays, I feel like **we need a wide range acknowledgment on web development even if we call ourselves "backend developer" or "frontend developer".**
-
-As for my experience, I've been a Rails engineer, I'm but recently working like kinda frontend developer because I spend all of my working time for building an SPA (single page application) built with React + TypeScript.
-
-The SPA, Of course, has a backend API, Ruby on Rails connecting PostgreSQL in my case. I use Docker Compose for defining and running multi-container Docker applications because it's not much simple to bootstrap all of applications and middlewares.
-
-**Learning each technology itself is not a burden. I rather like learning. But I've thought I'd like to pursue my playground whose tech stacks are virtually same as ones I develop in work.**
 
 ## Further Details
 

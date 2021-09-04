@@ -1,13 +1,13 @@
-import React from 'react';
-import './App.css';
+import React from "react";
+import "./App.css";
 
-const BACKEND_API_URL = process.env.BACKEND_API_URL || 'http://backend.localhost';
+const BACKEND_API_URL = process.env.BACKEND_API_URL || "http://localhost:3001";
 
 const fetchContent = async (updateContent: (content: string) => void) => {
-  const response = await fetch(`${BACKEND_API_URL}/greetings/hello`,{
+  const response = await fetch(`${BACKEND_API_URL}/greetings/hello`, {
     headers: {
-      'Accept': 'application/json',
-      'Content-Type': 'application/json',
+      Accept: "application/json",
+      "Content-Type": "application/json",
     },
   });
   const data = await response.json();
@@ -15,7 +15,9 @@ const fetchContent = async (updateContent: (content: string) => void) => {
 };
 
 const App: React.FC = () => {
-  const [content, updateContent] = React.useState('Waiting for a response from Rails...');
+  const [content, updateContent] = React.useState(
+    "Waiting for a response from Rails..."
+  );
 
   React.useEffect(() => {
     fetchContent(updateContent);
@@ -24,12 +26,10 @@ const App: React.FC = () => {
   return (
     <div className="App">
       <header className="App-header">
-        <p>
-          {content}
-        </p>
+        <p>{content}</p>
       </header>
     </div>
   );
-}
+};
 
 export default App;
