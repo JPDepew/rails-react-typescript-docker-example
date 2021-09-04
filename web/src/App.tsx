@@ -1,6 +1,6 @@
 import logo from "./logo.svg";
 import "./App.css";
-import React from "react";
+import React, { useState, useEffect } from "react";
 
 const BACKEND_API_URL = process.env.BACKEND_API_URL || "http://localhost:3001";
 
@@ -15,11 +15,11 @@ const fetchContent = async (updateContent: (content: string) => void) => {
   updateContent(data.content);
 };
 
-function App() {
-  const [content, updateContent] = React.useState(
+function App(): JSX.Element {
+  const [content, updateContent] = useState(
     "Waiting for a response from Rails..."
   );
-  React.useEffect(() => {
+  useEffect(() => {
     fetchContent(updateContent);
   }, []);
   return (
@@ -27,7 +27,7 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-          Edit <code>src/App.js</code> and save to reload.
+          Edit <code>src/App.tsx</code> and save to reload.
         </p>
         <a
           className="App-link"
