@@ -8,6 +8,8 @@ services:
     environment:
       POSTGRES_HOST_AUTH_METHOD: trust
   backend:
+    environment:
+      CHOKIDAR_USEPOLLING: "true"
     container_name: backend
     build: ./backend
     command: bundle exec rails s -p 3000 -b '0.0.0.0'
